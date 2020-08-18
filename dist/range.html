@@ -6,29 +6,15 @@
     <title>Range</title>
 </head>
 <body>
-    <p>1</p>
-    <p>2</p>
-    <p>
-        <span>31</span>
-        <span>32</span>
-        <span>33</span>
-        <span>34</span>
-        <span>35</span>
-        <span>36</span>
-        <span>37</span>
-    </p>
-    <p>4</p>
-    <p><span>51</span><span>52</span><span>53</span><span>54</span><span>55</span><span>56</span><span>57</span></p>
-    <p>6</p>
-
+    <section>
+        <div></div>
+    </section>
     <script>
-
-        var range = document.createRange();
-        var startNode = document.getElementsByTagName("p").item(2);
-        var endNode = document.getElementsByTagName("p").item(4);
-        range.selectNode(startNode)
-        range.collapse(false);
-        console.log(range)
+        range = document.createRange();
+        newNode = document.createElement("p");
+        newNode.appendChild(document.createTextNode("New Node Inserted Here"));
+        range.selectNode(document.getElementsByTagName("div").item(0));
+        range.insertNode(newNode);
     </script>
 </body>
 </html>
