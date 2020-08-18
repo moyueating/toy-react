@@ -26,6 +26,7 @@ export class Component {
         this.props[name] = value
     }
     appendChild(component){
+        // 将App的chidren保存，在调用render()的时候当做参数传入createElement(div, null, this.children)
         this.children.push(component)
     }
     get root(){
@@ -64,6 +65,7 @@ export function createElement(type, attributes, ...children){
 
 
 export const render = (component, parentElement) => {
+    // 这里获取component.root触发getter完成render执行返回真正的dom
     parentElement.appendChild(component.root)
 }
     
